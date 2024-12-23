@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WindowsAudioDriver
-build_property.ProjectDir = D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\
+build_property.ProjectDir = D:\WorkShop\Github\Windows_Audio_Driver\Proj\WindowsAudioDriver\WindowsAudioDriver\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

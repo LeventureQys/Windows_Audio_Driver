@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WindowsAudioDriver")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21a7d2a64ed789159bfd4c4c6cf1599cdec28d50")]
 [assembly: System.Reflection.AssemblyProductAttribute("WindowsAudioDriver")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WindowsAudioDriver")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

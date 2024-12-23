@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\WindowsAudioDriver.csproj": {}
+    "D:\\WorkShop\\Github\\Windows_Audio_Driver\\Proj\\WindowsAudioDriver\\WindowsAudioDriver\\WindowsAudioDriver.csproj": {}
   },
   "projects": {
-    "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\WindowsAudioDriver.csproj": {
+    "D:\\WorkShop\\Github\\Windows_Audio_Driver\\Proj\\WindowsAudioDriver\\WindowsAudioDriver\\WindowsAudioDriver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\WindowsAudioDriver.csproj",
+        "projectUniqueName": "D:\\WorkShop\\Github\\Windows_Audio_Driver\\Proj\\WindowsAudioDriver\\WindowsAudioDriver\\WindowsAudioDriver.csproj",
         "projectName": "WindowsAudioDriver",
-        "projectPath": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\WindowsAudioDriver.csproj",
+        "projectPath": "D:\\WorkShop\\Github\\Windows_Audio_Driver\\Proj\\WindowsAudioDriver\\WindowsAudioDriver\\WindowsAudioDriver.csproj",
         "packagesPath": "C:\\Users\\wenxuan.li\\.nuget\\packages\\",
-        "outputPath": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\obj\\",
+        "outputPath": "D:\\WorkShop\\Github\\Windows_Audio_Driver\\Proj\\WindowsAudioDriver\\WindowsAudioDriver\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\DevTools\\VS_Temp\\NuGetPackages"
