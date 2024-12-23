@@ -1,0 +1,16 @@
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\bin\Debug\net8.0-windows\WindowsAudioDriver.exe
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\bin\Debug\net8.0-windows\WindowsAudioDriver.deps.json
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\bin\Debug\net8.0-windows\WindowsAudioDriver.runtimeconfig.json
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\bin\Debug\net8.0-windows\WindowsAudioDriver.dll
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\bin\Debug\net8.0-windows\WindowsAudioDriver.pdb
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\obj\Debug\net8.0-windows\WindowsAudioDriver.Form1.resources
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\obj\Debug\net8.0-windows\WindowsAudioDriver.csproj.GenerateResource.cache
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\obj\Debug\net8.0-windows\WindowsAudioDriver.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\obj\Debug\net8.0-windows\WindowsAudioDriver.AssemblyInfoInputs.cache
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\obj\Debug\net8.0-windows\WindowsAudioDriver.AssemblyInfo.cs
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\obj\Debug\net8.0-windows\WindowsAudioDriver.csproj.CoreCompileInputs.cache
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\obj\Debug\net8.0-windows\WindowsAudioDriver.dll
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\obj\Debug\net8.0-windows\refint\WindowsAudioDriver.dll
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\obj\Debug\net8.0-windows\WindowsAudioDriver.pdb
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\obj\Debug\net8.0-windows\WindowsAudioDriver.genruntimeconfig.cache
+D:\WorkShop\CurrentWork\WindowsAudioDriver\WindowsAudioDriver\obj\Debug\net8.0-windows\ref\WindowsAudioDriver.dll

@@ -1,0 +1,90 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0-windows10.0.22621": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net6.0-windows10.0.22621": []
+  },
+  "packageFolders": {
+    "C:\\Users\\wenxuan.li\\.nuget\\packages\\": {},
+    "D:\\DevTools\\VS_Temp\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\WindowsAudioDriver.csproj",
+      "projectName": "WindowsAudioDriver",
+      "projectPath": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\WindowsAudioDriver.csproj",
+      "packagesPath": "C:\\Users\\wenxuan.li\\.nuget\\packages\\",
+      "outputPath": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\DevTools\\VS_Temp\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\wenxuan.li\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0-windows10.0.22621.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0-windows10.0.22621": {
+          "targetAlias": "net6.0-windows10.0.22621.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net6.0-windows10.0.22621": {
+        "targetAlias": "net6.0-windows10.0.22621.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.Windows.SDK.NET.Ref",
+            "version": "[10.0.22621.31, 10.0.22621.31]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.Windows.SDK.NET.Ref": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

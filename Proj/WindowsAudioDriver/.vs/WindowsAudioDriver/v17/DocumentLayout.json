@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4637E551-3880-4B25-BC8B-8FAAF72D40FC}|WindowsAudioDriver\\WindowsAudioDriver.csproj|d:\\workshop\\currentwork\\windowsaudiodriver\\windowsaudiodriver\\mediaaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4637E551-3880-4B25-BC8B-8FAAF72D40FC}|WindowsAudioDriver\\WindowsAudioDriver.csproj|solutionrelative:windowsaudiodriver\\mediaaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4637E551-3880-4B25-BC8B-8FAAF72D40FC}|WindowsAudioDriver\\WindowsAudioDriver.csproj|d:\\workshop\\currentwork\\windowsaudiodriver\\windowsaudiodriver\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4637E551-3880-4B25-BC8B-8FAAF72D40FC}|WindowsAudioDriver\\WindowsAudioDriver.csproj|solutionrelative:windowsaudiodriver\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4637E551-3880-4B25-BC8B-8FAAF72D40FC}|WindowsAudioDriver\\WindowsAudioDriver.csproj|D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\windowsaudiodriver\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4637E551-3880-4B25-BC8B-8FAAF72D40FC}|WindowsAudioDriver\\WindowsAudioDriver.csproj|solutionrelative:windowsaudiodriver\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4637E551-3880-4B25-BC8B-8FAAF72D40FC}|WindowsAudioDriver\\WindowsAudioDriver.csproj|d:\\workshop\\currentwork\\windowsaudiodriver\\windowsaudiodriver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4637E551-3880-4B25-BC8B-8FAAF72D40FC}|WindowsAudioDriver\\WindowsAudioDriver.csproj|solutionrelative:windowsaudiodriver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 138,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsAudioDriver\\Form1.cs",
+              "ToolTip": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\Form1.cs",
+              "RelativeToolTip": "WindowsAudioDriver\\Form1.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAowDAAAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T02:19:42.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MediaAudio.cs",
+              "DocumentMoniker": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\MediaAudio.cs",
+              "RelativeDocumentMoniker": "WindowsAudioDriver\\MediaAudio.cs",
+              "ToolTip": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\MediaAudio.cs",
+              "RelativeToolTip": "WindowsAudioDriver\\MediaAudio.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADsAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T01:29:15.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsAudioDriver\\Form1.cs",
+              "ToolTip": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\Form1.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "WindowsAudioDriver\\Form1.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T02:24:33.158Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\Program.cs",
+              "RelativeDocumentMoniker": "WindowsAudioDriver\\Program.cs",
+              "ToolTip": "D:\\WorkShop\\CurrentWork\\WindowsAudioDriver\\WindowsAudioDriver\\Program.cs",
+              "RelativeToolTip": "WindowsAudioDriver\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T01:14:19.028Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
