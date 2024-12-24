@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_enum_devices_clicked()
 {
-    auto item = WASRecorder::get_audio_devices_ids();
+    auto item = this->record->get_audio_devices_ids();
     QString single_line;
     for (auto item : item) {  
         single_line.append(QString::fromStdWString(item.first));
