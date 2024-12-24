@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="25.0.3">
+  <diagram name="第 1 页" id="XBddV55DjbQwey_XLS_B">
+    <mxGraphModel dx="983" dy="517" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-1" value="CoInitializeEx&lt;div&gt;初始化COM组件&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="363" y="30" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-2" value="IMMDeviceEnumerator" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="329.5" y="120" width="167" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-3" value="GetDevice&lt;div&gt;通过UUID获得设备指针&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="336.5" y="220" width="153" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-5" value="Active激活设备Client" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="320" width="127" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-7" value="初始化设备Client" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="353" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-8" value="实例化Capture/Render对象" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334.5" y="524.5" width="157" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6DI31-jCzuhJYyMoNr2f-1" target="6DI31-jCzuhJYyMoNr2f-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="130" as="sourcePoint" />
+            <mxPoint x="620" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6DI31-jCzuhJYyMoNr2f-2" target="6DI31-jCzuhJYyMoNr2f-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="230" as="sourcePoint" />
+            <mxPoint x="570" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6DI31-jCzuhJYyMoNr2f-3" target="6DI31-jCzuhJYyMoNr2f-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="330" as="sourcePoint" />
+            <mxPoint x="550" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6DI31-jCzuhJYyMoNr2f-5" target="6DI31-jCzuhJYyMoNr2f-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="430" as="sourcePoint" />
+            <mxPoint x="500" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-13" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6DI31-jCzuhJYyMoNr2f-7" target="6DI31-jCzuhJYyMoNr2f-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="510" as="sourcePoint" />
+            <mxPoint x="530" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-14" value="创建事件句柄，并开启一个新的线程，在新的线程中通过检查事件句柄来获取音频数据进行处理" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="630" width="226" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6DI31-jCzuhJYyMoNr2f-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="6DI31-jCzuhJYyMoNr2f-8" target="6DI31-jCzuhJYyMoNr2f-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="630" as="sourcePoint" />
+            <mxPoint x="560" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
