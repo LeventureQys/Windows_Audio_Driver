@@ -12,10 +12,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(HEADERS ./includes/AudioAPI.h)
 
 set(SRC ./src/AudioAPI.cpp)
+find_library(OLE32_LIB ole32)
+find_library(KSUSER_LIB ksuser)
+find_library(UUID uuid)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
-
+# 添加 mmdeviceapi.h 头文件路径
+include_directories(SYSTEM "${CMAKE_CURRENT_SOURCE_DIR}/path/to/mmdeviceapi.h")
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -49,10 +53,8 @@ else()
     endif()
 endif()
 # 查找Windows库
-find_library(OLE32_LIB ole32)
-find_library(KSUSER_LIB ksuser)
 
-target_link_libraries(WASAPI_Testbench PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${OLE32_LIB} ${KSUSER_LIB})
+target_link_libraries(WASAPI_Testbench PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${OLE32_LIB} ${KSUSER_LIB} ${UUID})
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
