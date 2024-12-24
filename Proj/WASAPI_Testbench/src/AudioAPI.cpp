@@ -57,6 +57,17 @@ bool WASRecorder::init(const InitParams& param)
 			std::cerr << "GetDevicePeriod failed: " << hr << std::endl;
 			return hr;
 		}
+		// 获取输出设备的默认和最小周期
+		REFERENCE_TIME hnsDefaultOutputDevicePeriod;
+		REFERENCE_TIME hnsMinimumOutputDevicePeriod;
+		hr = ptr_output_audio_client->GetDevicePeriod(&hnsDefaultOutputDevicePeriod, &hnsMinimumOutputDevicePeriod);
+		if (FAILED(hr)) {
+			std::cerr << "GetDevicePeriod (output) failed: " << hr << std::endl;
+			return hr;
+		}
+
+
+
 		WAVEFORMATEX* format_wav = NULL;
 		hr = ptr_audio_client->GetMixFormat(&format_wav);
 		if (FAILED(hr)) throw std::exception("Cant Get Mix Format!");
@@ -65,23 +76,37 @@ bool WASRecorder::init(const InitParams& param)
 		hr = ptr_output_audio_client->GetMixFormat(&format_wav_output);
 		if (FAILED(hr)) throw std::exception("Cant Get Mix Format Output!");
 		//初始化客户端
+		//初始化之前检查一下设备的状态
+		DWORD dw_state = 0;
+		hr = this->ptr_input_device->GetState(&dw_state);
+		if (FAILED(hr)) {
+			std::cerr << "Failed to get device state!" << std::endl;
+			return hr;
+		}
+		if (dw_state != DEVICE_STATE_ACTIVE) {
+			std::cerr << "Device is not active!" << std::endl;
+			return E_FAIL;
+		}
+
+
 
 		hr = this->ptr_audio_client->Initialize(
 			AUDCLNT_SHAREMODE_SHARED,
-			AUDCLNT_STREAMFLAGS_LOOPBACK | AUDCLNT_STREAMFLAGS_EVENTCALLBACK,
-			hnsDefaultDevicePeriod,
-			hnsDefaultDevicePeriod,
+			AUDCLNT_STREAMFLAGS_EVENTCALLBACK,
+			hnsMinimumDevicePeriod,
+			hnsMinimumDevicePeriod,
 			format_wav,
 			NULL);
+		if (FAILED(hr)) throw std::exception("Cant Init Audio Client");
 
 		hr = this->ptr_output_audio_client->Initialize(
 			AUDCLNT_SHAREMODE_SHARED,
-				0,
-				hnsDefaultDevicePeriod,
-				hnsDefaultDevicePeriod,
-				format_wav_output,
-				NULL);
-		
+			0,
+			hnsDefaultDevicePeriod,
+			hnsDefaultDevicePeriod,
+			format_wav_output,
+			NULL);
+
 
 		if (FAILED(hr)) throw std::exception("Cant Init Audio Client");
 
@@ -89,24 +114,33 @@ bool WASRecorder::init(const InitParams& param)
 		hr = this->ptr_audio_client->GetService(__uuidof(IAudioCaptureClient),
 			(void**)&this->ptr_audio_client_capture);
 		hr = this->ptr_output_audio_client->GetService(__uuidof(IAudioRenderClient),
-			(void**)&this->ptr_output_audio_client_capture);
+			(void**)&this->ptr_output_audio_client_render);
 		if (FAILED(hr)) throw std::exception("Cant Create Audio Capture Client");
 		// 释放音频格式内存
 		CoTaskMemFree(format_wav);
 
 		//6. 设置事件句柄，用于通知录音线程
+
+		if (this->handle_event == nullptr)
+			this->handle_event = CreateEvent(NULL, FALSE, FALSE, NULL);
+		if (this->handle_event == NULL) {
+			throw std::exception("Cant Create Event Handle");
+		}
 		hr = this->ptr_audio_client->SetEventHandle(this->handle_event);
-		if (FAILED(hr)) throw std::exception("Cant Set Event Handle");
+		
+
+		if (FAILED(hr)) 
+			throw std::exception("Cant Set Event Handle");
 	}
 	catch (const std::exception& err) {
-		std::cout <<"init"<< err.what() << std::endl;
+		std::cout << "init" << err.what() << std::endl;
 		return false;
 	}
 	this->bln_init = true;
 	return true;
 }
 
-std::vector<std::pair<std::wstring, std::wstring>> WASRecorder::get_audio_devices_ids()
+std::vector<std::pair<std::wstring, std::wstring>> WASRecorder::get_audio_devices_ids(bool blnInput)
 {
 	IMMDeviceEnumerator* enum_device = nullptr;
 	IMMDeviceCollection* ptr_devices_collection = nullptr;
@@ -119,7 +153,13 @@ std::vector<std::pair<std::wstring, std::wstring>> WASRecorder::get_audio_device
 			(LPVOID*)&enum_device);
 		if (FAILED(hr))
 			throw "2";
-		hr = enum_device->EnumAudioEndpoints(eAll, DEVICE_STATE_ACTIVE, &ptr_devices_collection);
+		if (blnInput) {
+			hr = enum_device->EnumAudioEndpoints(eCapture, DEVICE_STATE_ACTIVE, &ptr_devices_collection);
+		}
+		else {
+			hr = enum_device->EnumAudioEndpoints(eRender, DEVICE_STATE_ACTIVE, &ptr_devices_collection);
+		}
+
 		if (FAILED(hr)) {
 			throw "3";
 		}
@@ -193,15 +233,16 @@ bool WASRecorder::start_record()
 		if (this->bln_recorder_start) throw std::exception("Alread Recording!");
 		HRESULT hr = this->ptr_audio_client->Start();
 		if (FAILED(hr)) throw std::exception("Cant Start" + hr);
-		
+		hr = this->ptr_output_audio_client->Start();
+		if (FAILED(hr)) throw std::exception("Cant Start Listen" + hr);
 
 		//创建录音线程
 		this->handle_thread = CreateThread(
 			NULL, 0,
 			StaticRecordingThread,
 			this, 0, NULL);
-		
-		if (this->handle_thread) throw std::exception("Create Thread Failed");
+
+		if (this->handle_thread == nullptr) throw std::exception("Create Thread Failed");
 		this->bln_recorder_start = true;
 	}
 	catch (const std::exception& err) {
@@ -210,7 +251,7 @@ bool WASRecorder::start_record()
 			CloseHandle(this->handle_thread);
 			this->handle_thread = nullptr;
 		}
-		std::cerr << "start_record" <<err.what() << std::endl;
+		std::cerr << "start_record" << err.what() << std::endl;
 		return false;
 	}
 	return true;
@@ -221,7 +262,7 @@ bool WASRecorder::stop_record()
 	try {
 		if (!bln_recorder_start) throw std::exception("Not Recording!");
 		if (WaitForSingleObject(this->handle_thread, INFINITE) != WAIT_OBJECT_0) throw std::exception("Cant Stop Thread");
-		
+
 		HRESULT  hr = this->ptr_audio_client->Stop();
 		if (FAILED(hr)) throw std::exception("Cant Stop");
 
@@ -242,7 +283,7 @@ DWORD WASRecorder::record_thread()
 {
 	while (bln_recorder_start) {
 		// 等待事件通知
-		if (WaitForSingleObject(handle_event, INFINITE) != WAIT_OBJECT_0) {
+		if (WaitForSingleObject(this->handle_event, INFINITE) != WAIT_OBJECT_0) {
 			std::cerr << "WaitForSingleObject failed: " << GetLastError() << std::endl;
 			continue;
 		}
@@ -285,13 +326,13 @@ HRESULT WASRecorder::process_audio()
 
 			// 将音频数据写入播放设备缓冲区
 			BYTE* pRenderData;
-			hr = ptr_output_audio_client_capture->GetBuffer(numFramesAvailable, &pRenderData);
+			hr = ptr_output_audio_client_render->GetBuffer(numFramesAvailable, &pRenderData);
 			if (FAILED(hr)) {
 				std::cerr << "GetBuffer (render) failed: " << hr << std::endl;
 				return hr;
 			}
 			memcpy(pRenderData, pData, numFramesAvailable * 2); // 假设音频格式为 16 位 PCM
-			hr = ptr_output_audio_client_capture->ReleaseBuffer(numFramesAvailable, 0);
+			hr = ptr_output_audio_client_render->ReleaseBuffer(numFramesAvailable, 0);
 			if (FAILED(hr)) {
 				std::cerr << "ReleaseBuffer (render) failed: " << hr << std::endl;
 				return hr;
@@ -334,9 +375,9 @@ void WASRecorder::release_resource()
 		ptr_output_audio_client->Release();
 		ptr_output_audio_client = NULL;
 	}
-	if (ptr_output_audio_client_capture) {
-		ptr_output_audio_client_capture->Release();
-		ptr_output_audio_client_capture = NULL;
+	if (ptr_output_audio_client_render) {
+		ptr_output_audio_client_render->Release();
+		ptr_output_audio_client_render = NULL;
 	}
 	CoUninitialize();
 }

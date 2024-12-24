@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btn_enum_devices">
+   <widget class="QPushButton" name="btn_enum_devices_input">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>枚举所有设备</string>
+     <string>枚举输入设备</string>
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="plainTextEdit">
@@ -35,6 +35,58 @@
       <width>381</width>
       <height>341</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_init">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>初始化</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_start_record">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>开始录制</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_stop_record">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>停止录制</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_enum_devices_output">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>20</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>枚举输出设备</string>
     </property>
    </widget>
   </widget>

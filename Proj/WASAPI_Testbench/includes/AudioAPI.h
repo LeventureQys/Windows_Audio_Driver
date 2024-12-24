@@ -31,7 +31,7 @@ public :
 	/// 获得当前所有设备的id
 	/// </summary>
 	/// <returns>返回一个vector， pair中，key : 设备名称 value : 设备ID</returns>
-	static std::vector<std::pair<std::wstring,std::wstring>> get_audio_devices_ids();
+	static std::vector<std::pair<std::wstring,std::wstring>> get_audio_devices_ids(bool blnInput);
 	//是否监听此设备 
 	void set_monitor_state(bool bln_monitor);
 	/// <summary>
@@ -68,9 +68,9 @@ private:
 	IAudioCaptureClient* ptr_audio_client_capture;			// 音频流捕获
 
 	IAudioClient* ptr_output_audio_client;					//播放音频流
-	IAudioRenderClient* ptr_output_audio_client_capture;	//播放音频流播放器 
-	HANDLE handle_event;									// 事件句柄	
-	HANDLE handle_thread;									// 录音线程句柄
+	IAudioRenderClient* ptr_output_audio_client_render;	//播放音频流播放器 
+	HANDLE handle_event = nullptr;									// 事件句柄	
+	HANDLE handle_thread = nullptr;									// 录音线程句柄
 
 	bool bln_monitor = false;								//是否监听此设备
 	bool bln_recorder_start = false;						//是否开始录音
