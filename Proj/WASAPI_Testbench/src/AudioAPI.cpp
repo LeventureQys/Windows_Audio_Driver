@@ -75,6 +75,10 @@ bool WASRecorder::init(const InitParams& param)
 		WAVEFORMATEX* format_wav_output = NULL;
 		hr = ptr_output_audio_client->GetMixFormat(&format_wav_output);
 		if (FAILED(hr)) throw std::exception("Cant Get Mix Format Output!");
+
+
+
+
 		//初始化客户端
 		//初始化之前检查一下设备的状态
 		DWORD dw_state = 0;
@@ -93,8 +97,8 @@ bool WASRecorder::init(const InitParams& param)
 		hr = this->ptr_audio_client->Initialize(
 			AUDCLNT_SHAREMODE_SHARED,
 			AUDCLNT_STREAMFLAGS_EVENTCALLBACK,
-			hnsMinimumDevicePeriod,
-			hnsMinimumDevicePeriod,
+			hnsDefaultDevicePeriod,
+			hnsDefaultDevicePeriod,
 			format_wav,
 			NULL);
 		if (FAILED(hr)) throw std::exception("Cant Init Audio Client");
@@ -331,7 +335,15 @@ HRESULT WASRecorder::process_audio()
 				std::cerr << "GetBuffer (render) failed: " << hr << std::endl;
 				return hr;
 			}
-			memcpy(pRenderData, pData, numFramesAvailable * 2); // 假设音频格式为 16 位 PCM
+			float* inputData = reinterpret_cast<float*>(pData);
+			float* outputData = reinterpret_cast<float*>(pRenderData);
+
+			for (UINT32 i = 0; i < numFramesAvailable; i++) {
+				// 将单声道复制到立体声的两个通道
+				outputData[i * 2] = inputData[i];
+				outputData[i * 2 + 1] = inputData[i];
+			}
+			//memcpy(pRenderData, pData, numFramesAvailable * sizeof(float));
 			hr = ptr_output_audio_client_render->ReleaseBuffer(numFramesAvailable, 0);
 			if (FAILED(hr)) {
 				std::cerr << "ReleaseBuffer (render) failed: " << hr << std::endl;
