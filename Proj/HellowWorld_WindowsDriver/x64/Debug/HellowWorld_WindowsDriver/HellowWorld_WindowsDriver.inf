@@ -8,7 +8,7 @@ Class       = System ; TODO: specify appropriate Class
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
 Provider    = %ManufacturerName%
 CatalogFile = HellowWorld_WindowsDriver.cat
-DriverVer   = ; TODO: set DriverVer in stampinf property pages
+DriverVer = 12/25/2024,21.53.34.842
 PnpLockdown = 1
 
 [DestinationDirs]
@@ -25,9 +25,9 @@ HellowWorld_WindowsDriver.sys = 1,,
 ;*****************************************
 
 [Manufacturer]
-%ManufacturerName% = Standard,NT$ARCH$.10.0...16299 ; %13% support introduced in build 16299
+%ManufacturerName% = Standard,NTamd64.10.0...16299 ; %13% support introduced in build 16299
 
-[Standard.NT$ARCH$.10.0...16299]
+[Standard.NTamd64.10.0...16299]
 %HellowWorld_WindowsDriver.DeviceDesc% = HellowWorld_WindowsDriver_Device, Root\HellowWorld_WindowsDriver ; TODO: edit hw-id
 [HellowWorld_WindowsDriver_Device.NT]
 CopyFiles = File_Copy
@@ -51,7 +51,7 @@ ServiceBinary  = %13%\HellowWorld_WindowsDriver.sys
 KmdfService = HellowWorld_WindowsDriver, HellowWorld_WindowsDriver_wdfsect
 
 [HellowWorld_WindowsDriver_wdfsect]
-KmdfLibraryVersion = $KMDFVERSION$
+KmdfLibraryVersion = 1.15
 
 [Strings]
 SPSVCINST_ASSOCSERVICE = 0x00000002

@@ -1,4 +1,4 @@
-#include <ntddk.h> // 包含 Windows 驱动程序开发所需的基本头文件
+﻿#include <ntddk.h> // 包含 Windows 驱动程序开发所需的基本头文件
 #include <wdf.h>   // 包含 Windows Driver Framework (WDF) 的头文件
 
 // 声明驱动程序入口函数 DriverEntry
@@ -6,8 +6,6 @@ DRIVER_INITIALIZE DriverEntry;
 
 // 声明设备添加回调函数 KmdfHelloWorldEvtDeviceAdd
 EVT_WDF_DRIVER_DEVICE_ADD KmdfHelloWorldEvtDeviceAdd;
-
-// 驱动程序入口函数
 NTSTATUS
 DriverEntry(
     _In_ PDRIVER_OBJECT  DriverObject,  // 驱动程序对象指针
@@ -60,10 +58,4 @@ KmdfHelloWorldEvtDeviceAdd(
     return status; // 返回创建设备对象的状态
 }
 
-NTSTATUS
-DeviceUnplugin(
-    _In_ WDFDRIVER Driver   //驱动承兑对象指针
-) {
-    KdPrintEx((DPFLTR_IHVDRIVER_ID, DPFLTR_INFO_LEVEL,
-        "HelloWolrd_WindowsDriver: Device Unplugin\n"));
-}
+
